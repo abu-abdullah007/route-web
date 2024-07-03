@@ -1,4 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 .section1{
     height: 500px;
     width: 100%;
+    background: linear-gradient(#00000096,#0000009a),url(../assets/cover3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section1 h1{
+    color:transparent;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    background-image: url(bg-day.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
