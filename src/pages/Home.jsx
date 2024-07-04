@@ -8,6 +8,24 @@ const Home = () => {
         const linkParent = document.querySelector('#hiddenLinkData')
         const button2 = document.querySelector('.btn2')
         const allLinks = document.querySelector('#links')
+        const image = document.querySelector('#image')
+        const textSection = document.querySelector('#textSection')
+
+        window.addEventListener("scroll",()=>{
+            if(image.getBoundingClientRect().top >= 570){
+                image.style.transform = "translateX(0)"
+                image.style.opacity = "1"
+                image.style.transition = "0.7s ease-out"
+            }
+
+            if(textSection.getBoundingClientRect().top >= 570){
+                setTimeout(()=>{
+                    textSection.style.transform = "translateX(-70px)"
+                    textSection.style.opacity = "1"
+                    textSection.style.transition = "0.9s ease-out"
+                },400)
+            }
+        })
 
         button2.style.display = "none"
 
@@ -35,10 +53,10 @@ const Home = () => {
             <section className={css.section2}>
                 <div className={css.sectionCenter}>
                     <div className={css.left}>
-                        <img src={balance} alt="karate man kick upper" />
+                        <img src={balance} alt="karate man kick upper" id='image' />
                     </div>
                     <div className={css.right}>
-                        <div className={css.textSection}>
+                        <div className={css.textSection} id='textSection'>
                             <p>"The only way to truly understand martial arts is to consistently practice and experience it for yourself."</p>
                             <p>"The true measure of a martial artist is not the number of victories, but the number of battles they have fought with honor."</p>
                             <p>"The true measure of a martial artist is not the number of victories, but the number of battles they have fought with honor."</p>
