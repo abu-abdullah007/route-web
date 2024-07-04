@@ -4,44 +4,37 @@ import { useEffect } from 'react';
 
 const Home = () => {
     useEffect(()=>{
-        const button = document.querySelector('.btn')
-        const linkParent = document.querySelector('#hiddenLinkData')
-        const button2 = document.querySelector('.btn2')
-        const allLinks = document.querySelector('#links')
         const image = document.querySelector('#image')
         const textSection = document.querySelector('#textSection')
 
-        window.addEventListener("scroll",()=>{
-            if(image.getBoundingClientRect().top >= 570){
-                image.style.transform = "translateX(0)"
-                image.style.opacity = "1"
-                image.style.transition = "0.7s ease-out"
-            }
-
-            if(textSection.getBoundingClientRect().top >= 570){
+        const slideEffect = () =>{
+            if(window.innerWidth > 980){
+                setTimeout(()=>{
+                    image.style.transform = "translateX(0)"
+                    image.style.opacity = "1"
+                    image.style.transition = "1s ease-out"
+                },400)
+            
                 setTimeout(()=>{
                     textSection.style.transform = "translateX(-70px)"
                     textSection.style.opacity = "1"
-                    textSection.style.transition = "0.9s ease-out"
+                },700)
+            }else{
+                setTimeout(()=>{
+                    image.style.transform = "translateX(0)"
+                    image.style.opacity = "1"
+                    image.style.transition = "1s ease-out"
                 },400)
+            
+                setTimeout(()=>{
+                    textSection.style.transform = "translate(0px,-200px)"
+                    textSection.style.opacity = "1"
+                },700)
             }
-        })
+        }
 
-        button2.style.display = "none"
-
-        button.addEventListener("click",()=>{
-            linkParent.style.display = "flex";
-            linkParent.scrollIntoView({behavior:'smooth'})
-            button.style.display = "none"
-            button2.style.display = "block"
-        })
-
-        button2.addEventListener("click",()=>{
-            linkParent.style.display = "none";
-            allLinks.scrollIntoView({behavior:'smooth'})
-            button2.style.display = "none"
-            button.style.display = "block"
-        })
+        window.addEventListener("load",slideEffect)
+        window.addEventListener("resize",slideEffect)
     })
 
     return (
@@ -66,32 +59,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={css.links} id='links'>
-                    <i className="fa-solid fa-square-phone" ></i>
-                    <i className="fa-solid fa-envelope"></i>
-                    <i className="fa-brands fa-youtube"></i>
-                    <i className="fa-brands fa-square-whatsapp"></i>
-                    <i className="fa-solid fa-angles-down btn"></i>
-
-                    <i className="fa-solid fa-angles-up btn2"></i>
-                    <div className={css.linkData} id='hiddenLinkData'>
-                        <div className={css.dataCenter} id='mainLink'>
-                            <div className={css.info}>
-                                <i className="fa-solid fa-square-phone"></i>
-                                <p>01711-799715</p>
-                            </div>
-                            <div className={css.info}>
-                                <i className="fa-brands fa-square-whatsapp"></i>
-                                <p>01716-421927</p>
-                            </div>
-                            <div className={css.info}>
-                                <a href="https://www.youtube.com/@YoungKarateOrganization" target='blank'><i className="fa-brands fa-youtube"></i>Click To Go Youtube</a>
-                            </div>
-                            <div className={css.info}>
-                                <i className="fa-solid fa-envelope"></i>
-                                <p>youngkarateorganization@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="/contact"><i className="fa-solid fa-square-phone" ></i></a>
+                    <a href="/contact"><i className="fa-solid fa-envelope"></i></a>
+                    <a href="/contact"><i className="fa-brands fa-youtube"></i></a>
+                    <a href="/contact"><i className="fa-brands fa-square-whatsapp"></i></a>
                 </div>
             </section>
         </>
