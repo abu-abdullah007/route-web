@@ -8,7 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .navItem{
@@ -94,6 +96,10 @@
 
 #hideButton{
     cursor: pointer;
+}
+
+.navItem a:hover, .hiddenList a:hover{
+    color: green;
 }
 
 @media screen and (max-width: 650px) {
