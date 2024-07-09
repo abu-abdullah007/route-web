@@ -34,6 +34,7 @@ const Home = () => {
         }
 
         window.addEventListener("load",slideEffect)
+        window.addEventListener("scroll",slideEffect)
         window.addEventListener("resize",slideEffect)
     })
 

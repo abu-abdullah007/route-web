@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet,NavLink } from 'react-router-dom'
 import css from '../assets/navBar.module.css'
 import logo from '../assets/yko.png'
+import '../assets/navBar.css'
 
 const NavBar = () => {
     useEffect(()=>{
@@ -26,10 +27,10 @@ const NavBar = () => {
                     <a href="/"><img src={logo} alt="young karate organization" /></a>
                 </div>
                 <div className={css.navItem}>
-                    <a href="/">home</a>
-                    <a href="/about">about</a>
-                    <a href="/training">training</a>
-                    <a href="/contact">contact</a>
+                    <NavLink to="/">home</NavLink>
+                    <NavLink to="/about">about</NavLink>
+                    <NavLink to="/training">training</NavLink>
+                    <NavLink to="/contact">contact</NavLink>
                 </div>
                 <div className={css.hiddenNav} id='hideRemoveButton'>
                     <div className={css.btnBox}></div>
@@ -39,10 +40,10 @@ const NavBar = () => {
             </div>
             <div className={css.hiddenList} id='hideNav'>
                 <i className="fa-solid fa-x" id='hideButton'></i>
-                <a href="/">home</a>
-                <a href="/about">about</a>
-                <a href="/training">training</a>
-                <a href="/contact">contact</a>
+                <NavLink to="/">home</NavLink>
+                <NavLink to="/about">about</NavLink>
+                <NavLink to="/training">training</NavLink>
+                <NavLink to="/contact">contact</NavLink>
             </div>
             <Outlet/>
         </>

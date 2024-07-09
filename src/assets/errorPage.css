@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+
+.mainErrorPage{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-center{
+    width: 1280px;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.error-center-mode{
+    text-align: center;
+}
+
+.error-center-mode h1{
+    font-family: "Ga Maamli", sans-serif;
+    font-size: 10rem;
+    background-image: url(error_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline;
+}
+
+.error-center-mode h2,h3{
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.error-center-mode span{
+    display: inline;
+    font-size: 10rem;
+    color: yellow;
+}
